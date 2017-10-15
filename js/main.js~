@@ -1,0 +1,157 @@
+$(document).ready(function(){
+	redirect(2,"#bgGaruda");
+})
+
+function redirect(waktu, url){
+	var interval = setInterval(function(){
+		waktu--;
+		if(waktu == 0){
+			clearInterval(interval);
+			/*$("#splaceScreen").css("display", "none");*/
+			$(url).fadeTo("fast", "0.7");
+			$("#bgMerah").fadeIn(800);
+			animasiMain();
+			/*$("#main").css("display", "block");*/
+			
+			/*$("#main").fadeIn("slow");*/
+		}
+	}, 1000);
+}
+
+function animasiMain (){
+	$("#main").delay(1000).css("display", "block");	
+	/*$("#header").slideDown("slow");*/
+	$("#judul").slideDown("slow");
+	/*$("#test").slideDown("slow");*/
+	$("#divSila1").slideDown(1000);
+	$("#divSila2").slideDown(950);
+	$("#divSila3").slideDown(900);
+	$("#divSila4").slideDown(800);
+	$("#divSila5").slideDown(700);
+}
+
+function rest(){
+	$("#content").fadeOut();
+	$("#kl").fadeOut();
+	nonePageMain();
+	animasiMain();
+	$("#content").delay(1000).fadeOut();
+	$("#kl").delay(1000).fadeOut();
+	console.log("rest " + $("#content").css("display"))
+}
+
+$('.btn').on('click', function(){
+	switch ($(this).attr("id")){
+		case "sila1":
+			transisiOnContent();
+			$("#content").delay(500).fadeIn();
+			$("#kl").delay(500).fadeIn();
+			sila1();
+			console.log("content " + $("#content").css("display"));
+			console.log("main " + $("#main").css("display"));
+			break;
+		case "sila2":
+			transisiOnContent();
+			$("#content").delay(500).fadeIn();
+			$("#kl").delay(500).fadeIn();
+			sila2();
+			console.log("content " + $("#content").css("display"));
+			console.log("main " + $("#main").css("display"));
+			break;
+		case "sila3":
+			transisiOnContent();
+			$("#content").delay(500).fadeIn();
+			$("#kl").delay(500).fadeIn();
+			sila3();
+			console.log("content " + $("#content").css("display"));
+			console.log("main " + $("#main").css("display"));
+			break;
+		case "sila4":
+			transisiOnContent();
+			$("#content").delay(500).fadeIn();
+			$("#kl").delay(500).fadeIn();
+			sila4();
+			console.log("content " + $("#content").css("display"));
+			console.log("main " + $("#main").css("display"));
+			break;
+		case "sila5":
+			transisiOnContent();
+			$("#content").delay(500).fadeIn();
+			$("#kl").delay(500).fadeIn();
+			sila5();
+			console.log("content " + $("#content").css("display"));
+			console.log("main " + $("#main").css("display"));
+			break;
+	}
+})
+
+function transisiOnContent (){
+	$("#main").slideUp("slow");	
+	console.log($("#main").css("display"));
+}
+
+function nonePageMain(){
+	$("#main").delay(200).css("display", "none");	
+	$("#judul").delay(200).css("display", "none");
+	$("#divSila1").delay(200).css("display", "none");
+	$("#divSila2").delay(200).css("display", "none");
+	$("#divSila3").delay(200).css("display", "none");
+	$("#divSila4").delay(200).css("display", "none");
+	$("#divSila5").delay(200).css("display", "none");
+}
+
+function sila1(){
+	$("#namaLambang").text("BINTANG EMAS");
+	$("#gambarLambang").attr("src", "./images/bintang-emas.png");
+}
+
+function sila2(){
+	$("#namaLambang").text("RANTAI EMAS");
+	$("#gambarLambang").attr("src", "./images/rantai-emas.png");
+}
+
+function sila3(){
+	$("#namaLambang").text("POHON BERINGIN");
+	$("#gambarLambang").attr("src", "./images/pohon-beringin.png");
+}
+
+function sila4(){
+	$("#namaLambang").text("KEPALA BANTENG");
+	$("#gambarLambang").attr("src", "./images/kepala-banteng.png");
+}
+
+function sila5(){
+	$("#namaLambang").text("PADI DAN KAPAS");
+	$("#gambarLambang").attr("src", "./images/padi-dan-kapas.png");
+}
+
+( function() {
+    // TODO:: Do your initialization job
+
+    // add eventListener for tizenhwkey
+    document.addEventListener('tizenhwkey', function(e) {
+        if (e.keyName === "back") {
+        	pageid = $("div").attr ("id");
+        	pageid = "#" + pageid;
+        	
+        	if ($("#content").css("display") == "table" && $("#main").css("display") == "none"){
+        		rest();
+        		console.log("berhasil");
+        	} else if ($("#content").css("display") == "none" && $("#main").css("display") == "block") {
+        		console.log("gagal");
+        		console.log("content2 " + $("#content").css("display"));
+    			console.log("main2 " + $("#main").css("display"));
+    			try {
+                    tizen.application.getCurrentApplication().exit();
+                } catch (ignore) {
+                	
+                }
+        	}
+            /*try {
+                tizen.application.getCurrentApplication().exit();
+            } catch (ignore) {
+            	
+            }*/
+        }
+    });
+} () );

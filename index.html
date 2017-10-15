@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="height=device-height, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="dicoding:email" content="fahri.lafa@gmail.com">
+    <meta name="description" content="Pancasila"/>
+
+    <title>Pancasila</title>
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+</head>
+
+<body>
+	<img id="bgMerah" style="display:none;" src="./images/Merah.png" alt="background" class="bg">
+    <div id="splaceScreen" class="page" style="display:block;position:absolute;background-color:transparent;" align="center">
+        <img id="bgGaruda" src="./images/garuda.png" alt="background" class="bg">
+    </div>
+    
+    <div id="main" class="page" style="display:none; color:black; position:fixed; background-color:transparent;" align="center">
+    	<div id="icon">
+    		<div id="keluar" align="center" onclick="keluar()">
+				<img src="./images/x.png" id="iconKeluar">
+			</div>
+			<div id="tentang" align="center">
+				<img src="./images/tanya.png" id="iconTentang">
+			</div>
+		</div> 
+    	<div id="header">
+    		<div style="display:table-cell; vertical-align:middle">
+    			<h1 id="judul" style="display:none;">PANCASILA</h1>
+    		</div>
+    	</div>
+    	<div id="menu" style="height:75%; display:table;">
+    		<div id="menuSila" style="margin: 0% -20%;display:table-cell;vertical-align: middle;">
+				<div id="divSila1" class="sila" >
+					<button id="sila1" class="btn"><div class="divBtn">Sila 1</div></button>
+				</div>
+				<div id="divSila2" class="sila">
+					<button id="sila2" class="btn"><div class="divBtn">Sila 2</div></button>
+				</div>
+				<div id="divSila3" class="sila">
+					<button id="sila3" class="btn"><div class="divBtn">Sila 3</div></button>
+				</div>
+				<div id="divSila4" class="sila">
+					<button  id="sila4" class="btn"><div class="divBtn">Sila 4</div></button>
+				</div>
+				<div id="divSila5" class="sila">
+					<button id="sila5" class="btn"><div class="divBtn">Sila 5</div></button>
+				</div> 		
+    		</div>
+    	</div>
+    </div>
+    
+    <div class="page" id="content" style="position:fixed; display:none;">
+    	<div id="headerContent" style="height:25%; width:100%; padding:5px;">
+    		<div id="lambang">
+    			<div id="gambar" align= 'center'>
+    				<!-- <button id="kl" style="display:none;" onclick="rest()">check</button> -->
+    				<div id="divGambarLambang">
+    					<img id = "gambarLambang" src="" align="center">
+    				</div>
+    			</div>
+    			<div id="tulisan">
+    				<div id = "divNamaLambang">
+    					<p  align = "center"><b id = "namaLambang"></b></p>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    	<div id="isi" style="height:75%; width:100%; bakcground-color:red;">
+    		<iframe id="iframe" class="page"  src="" background-color:transparent; style = "overflow: block;"frameborder="0">
+    		</iframe>
+    	</div>
+    </div>
+    
+    <div id="popup" align="center">
+    	<div id="divPopContent" onclick="clickContent()">
+    		<div id="popContent">
+    			<h1 id="judulPop"></h1>
+    			<p id=isiPop></p>
+    		</div>
+    	</div>
+    </div>
+    
+    <div id="popKeluar" align="center">
+    	<h3 style="margin-top:10px;"> Anda yakin ingin keluar ?</h3>
+    	<button id="ya" class="btnPopKeluar">Ya</button>
+    	<button id="Tidak" class="btnPopKeluar">Tidak</button>
+    </div>
+    <!-- <div id="popupTentang" align="center">
+    	<div id="divpopTentang">
+    		<div id="isiTentang">
+    			<h1>Tentang</h1>
+    		</div>
+    	</div>   
+    </div> -->
+    
+    <script src="./js/jquery-3.2.1.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>
